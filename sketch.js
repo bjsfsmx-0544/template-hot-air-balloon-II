@@ -22,20 +22,20 @@ obsBottom3 = loadImage("assets/obsBottom3.png")
 function setup(){
 
   createCanvas(400,400)
-//background image
+//Imagen de fondo
 bg = createSprite(165,485,1,1);
 bg.addImage(bgImg);
 bg.scale = 1.3
 
 
-//creating top and bottom grounds
+// Creando los terrenos superior e inferior
 bottomGround = createSprite(200,390,800,20);
 bottomGround.visible = false;
 
 topGround = createSprite(200,10,800,20);
 topGround.visible = false;
       
-//creating balloon     
+// Creando al globo
 balloon = createSprite(100,200,20,50);
 balloon.addAnimation("balloon",balloonImg);
 balloon.scale = 0.2;
@@ -48,13 +48,13 @@ function draw() {
   
   background("black");
         
-          //making the hot air balloon jump
+          // Haciendo saltar al globo aerostático
           if(keyDown("space")) {
             balloon.velocityY = -6 ;
             
           }
 
-          //adding gravity
+          // Agregando gravedad
            balloon.velocityY = balloon.velocityY + 2;
 
            
@@ -62,7 +62,7 @@ function draw() {
    
         drawSprites();
        
-        //spawning top obstacles
+        // Generando obstáculos superiores
       spawnObstaclesTop();
 
       
@@ -79,10 +79,10 @@ function spawnObstaclesTop()
     obstacleTop.scale = 0.1;
     obstacleTop.velocityX = -4;
 
-    //random y positions for top obstacles
+    // Posoción Y aleatoria para obstáculos superiores
     obstacleTop.y = Math.round(random(10,100));
 
-    //generate random top obstacles
+    // Generando obstáculos superiores aleatorios
     //var rand = Math.round(random(0,1));
     //var rand = random(1,2);
    // var rand = Math.round(random(1,2));
@@ -96,7 +96,7 @@ function spawnObstaclesTop()
       default: break;
     }
 
-     //assign lifetime to the variable
+     // Asignando tiempo de vida a la variable
    obstacleTop.lifetime = 100;
    //obstacleTop.depth=obstacleTop.depth+1;
     //balloon.depth = balloon.depth + 1;
